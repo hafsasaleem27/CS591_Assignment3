@@ -9,3 +9,6 @@ staff <- fread("data/staff.csv")
 rental <- fread("data/rental.csv")
 inventory <- fread("data/inventory.csv")
 payment <- fread("data/payment.csv")
+
+pg_films <- film[rating == "PG" & rental_duration > 5]
+print(pg_films)
