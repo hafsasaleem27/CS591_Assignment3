@@ -28,3 +28,8 @@ payment_details <- merge(payment, staff, by = "staff_id")[,
   .(payment_id, amount, payment_date, staff_name = paste(first_name, last_name))]
 print(payment_details)
 
+rented_film_ids <- unique(merge(inventory, rental, by = "inventory_id")$film_id)
+not_rented_films <- film[!film_id %in% rented_film_ids]
+print(not_rented_films)
+
+
