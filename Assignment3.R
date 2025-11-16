@@ -16,3 +16,8 @@ print(pg_films)
 avg_rental_rate <- film[, .(avg_rental_rate = mean(rental_rate, na.rm = TRUE)), by = rating]
 print(avg_rental_rate)
 
+film_language_count <- merge(film, language, by.x = "language_id", by.y = "language_id")[,
+  .(total_films = .N), by = name]
+print(film_language_count)
+
+
