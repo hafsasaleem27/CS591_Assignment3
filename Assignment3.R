@@ -32,4 +32,10 @@ rented_film_ids <- unique(merge(inventory, rental, by = "inventory_id")$film_id)
 not_rented_films <- film[!film_id %in% rented_film_ids]
 print(not_rented_films)
 
+windows()  # open a new graphics device
+print(
+  ggplot(avg_rental_rate, aes(x = factor(rating), y = avg_rental_rate)) +
+    geom_bar(stat = "identity", fill = "skyblue")
+)
+
 
