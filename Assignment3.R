@@ -24,3 +24,7 @@ customer_store <- merge(customer, store, by = "store_id")[,
   .(customer_name = paste(first_name, last_name), store_id)]
 print(customer_store)
 
+payment_details <- merge(payment, staff, by = "staff_id")[,
+  .(payment_id, amount, payment_date, staff_name = paste(first_name, last_name))]
+print(payment_details)
+
