@@ -20,4 +20,7 @@ film_language_count <- merge(film, language, by.x = "language_id", by.y = "langu
   .(total_films = .N), by = name]
 print(film_language_count)
 
+customer_store <- merge(customer, store, by = "store_id")[,
+  .(customer_name = paste(first_name, last_name), store_id)]
+print(customer_store)
 
